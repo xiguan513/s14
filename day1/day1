@@ -1,0 +1,217 @@
+pycharm 常用功能
+    工具箱功能
+    View-->toolbar
+    侧边栏功能
+    View-->tool buttons
+    设置
+    ctrl+alt+s
+    配置默认模板
+    ctrl+alt+s打开配置（setting）--->Editor--->File and code Templates---Python Script
+
+    常用快捷方式
+    TAB Shift+TAB 缩进/取消缩进所选择的行
+    Ctrl + Alt + I 自动缩进行
+    Ctrl + Y 删除当前插入符所在的行
+    Ctrl + D 复制当前行、或者选择的块
+    Ctrl + Shift + J 合并行
+
+变量：
+    计算机语言中能储存计算结果或能表示值抽象概念。变量可以通过变量名访问。存在内存空间中方便后续调用。
+
+变量命名规则：
+    标识符的第一个字符必须是字母表中的字母(大写或者小写)或是一个下划线(‘_’);
+    标识符名称的其他部分可以由字母(大写或小写),下划线(‘_’)或数字(0-9)组成;
+    标识符名称对大小写敏感;
+    变量的命名:书写规范可读性,(user_name).
+    例子：
+        name="songbing"
+        _name="宋兵"
+        user_name=123
+        user1='test'
+        user_2name='ceshi'
+
+变量内存地址：
+    当变量name被赋值字符串song的时候,在内存中创建变量’name’,内存地址为45599800L,
+    同时把变量name重新赋值给变量name1,这时候name1的内存地址和name一样,
+    此时修改变量name的值,重新查看name和name1的内存地址已经发生变化,
+    修改内存存储空间,得出结果是在0-255直接的数值python虚拟机自动做优化,
+    把相同的内容指定到相同的内存空间.
+    例子：
+        >>> name='song'
+        >>> name1=name
+        >>> print name,name1
+        song song
+        >>> id(name)
+        43830248L
+        >>> id(name1)
+        43830248L
+        >>> name='bing'
+        >>> print name,name1
+        bing song
+        >>> id(name)
+        43830328L
+        >>> id(name1)
+        43830248L
+
+二进制：
+        存在1 不存在0 标识 1Byte=bit
+        126 64  32  16  8   4   2   1
+        0   0   0   0   0   0   0   0
+字符编码：
+    ASCII：
+        255个bytes
+        每个字母一个字节
+
+    中文：
+        GB2312(1908年)共收录7445个字符
+        GB18030(2000年)共收录21886个字符(汉字，特殊字符，符号，少数民族文字)
+        GBK指代中文windowns内码
+        一个汉字=2bytes
+    Unicode(统一码，万国码)：
+        UTF-8是对Unicode编码的压缩和优化，可变化的
+        一个汉字=3byte
+        一个字母一个字节
+
+注释：
+    单行注释： # 被注释内容
+    多行注释： """  被注释内容  """ 可以三个单引号，也可以是三个双引号，还可以表示打印多行内容
+    例子：
+        print("""
+        This is test,
+        Hello World,
+        and That is ceshi.
+        """)
+用户交互：
+        input() 默认交互接收到的都是字符串，如果需要其他格式需要转换，转换为数字：int()
+        input("Please input your name: ")
+    例子：
+        username=input("Please input your name: ")
+        print(username)
+
+
+变量引用(格式化输出)：
+    %s(字符串) ; %d(整数) ; %f(浮点数)
+    例子:
+        username=input("Please input your name: ")
+        age=input("Please input your age: ")
+        #print(type(age))查看age接收的格式默认为字符串
+        print("My name is %s and my age is %d" % (username,int(age)))
+
+    getpass 模块无显示输入在pychame工具不能使用
+
+    python 2.6 和Python3.0（以及以后的版本）中新的字符串对象的format方法使用主体字符串作为模板，
+    并且接受任意多个表示将要根据模板替换的值的参数。在主体字符串中，
+    花括号通过位置（例如，{1}或者关键字（例如，{food}））指出替换目标及将要插入的参数。
+    注意：通过位置指定的时候是根据format()里面传入的参数的位置来确定
+    例子：
+        >>> template='{0},{1} and {2}'
+        >>> template.format('spam','ham','eggs')
+        'spam,ham and eggs'
+                                                0		1 (指定顺序，从0开始)
+        >>> template2='{1},{0},{1}'.format('ceshi','test')
+        >>> template2
+        'test,ceshi,test'
+        #通过类别下标
+        >>> p=["kk",18]
+        >>> p
+        ['kk', 18]
+        >>> template3='{0[0]},{0[1]}'.format(p)
+        >>> template3
+        'kk,18'
+        #通过指定关键字
+        >>> templage1='{motto},{pork} and {food}'
+        >>> templage1.format(motto='spam',pork='ham',food='eggs')
+        'spam,ham and eggs'
+        #字符串可以创建一个临时字符串的常亮，并且任意的对象类型都可以替换
+        >>> '{motto},{0} and {food}'.format(42,motto=3.14,food=[1,2])
+        '3.14,42 and [1, 2]'
+        #
+        >>> x='{motto},{0} and {food}'.format(42,motto=3.14,food=[1,2])
+        >>> x
+        '3.14,42 and [1, 2]'
+        >>>
+
+        #^、<、>分别是居中、左对齐、右对齐，后面带宽度
+        #:号后面带填充的字符，只能是一个字符，不指定的话默认是用空格填充
+        #指定偏移量
+        #{0:10}表示一个10位字符宽的字段中的第一个位置参数
+        #{1:<10}表示第二个位置参数在一个10位字符宽度字段中 左对齐
+        >>> '{0:10}={1:10}'.format('spam',123.4567)
+        'spam      =  123.4567'
+        >>> '{1:>10}={1:<10}'.format('spam',123.4567)
+        '  123.4567=123.4567  '
+        #精度与类型f
+        >>> template4='{:.2f}'.format(3.1425165)
+        >>> template4
+        '3.14'
+        #使用逗号默认3位分割
+        >>> '{:,}'.format(123456789)
+        '123,456,789'
+
+判断语句：
+        Python程序语言指定任何非0和非空（null）值为true，0 或者 null为false。
+        条件判断
+                Python 中if语句用于控制程序的执行，当判断条件成立时(非0)，则执行后面的语句，执行内容可以是是多行，以缩进来区分表示同一范围。
+                else 为可选语句，当需要在条件不成立是执行内容则可以执行相关语句。
+                if 语句的判断条件可以用>（大于）、<(小于)、==（等于）、>=（大于等于）、<=（小于等于）
+        != (不等于)来表示其关系
+                如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。
+                当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，即大于和小于在没有括号的情况下会比与或要优先判断。
+
+        1	判断
+        if 判断条件：
+            执行语句……
+        else：
+                    执行语句……
+        2	多重判断
+            if 判断条件1:
+            执行语句1……
+        elif 判断条件2:
+            执行语句2……
+        elif 判断条件3:
+            执行语句3……
+        else:
+                   执行语句4……
+        3	循环
+        for:
+        for iterating_var in sequence:
+                statements(s)
+
+        for iterating_var in sequence:
+                statements(s)
+            else:
+                执行语句……
+
+            当for语句正常执行结束以后，才执行else语句
+        while:
+        while 判断条件：
+                执行语句……
+
+        while 判断条件：
+                执行语句……
+            else:
+                执行语句……
+                        当while语句正常执行结束以后，才执行else语句
+        4	断点
+        break
+        在语句块执行过程中终止循环，并且跳出整个循环
+        continue
+                在语句块执行过程中终止当前循环，跳出该次循环，执行下一次循环。
+        pass
+                pass是空语句，是为了保持程序结构的完整性
+
+
+
+    例子：
+
+作业：
+    1 博客
+    2 编写登陆接口
+        输入用户名密码
+        认证成功后显示欢迎信息
+        输错三次后锁定
+    3 多级菜单
+        三级菜单
+        可依次选择进入各子菜单
+        所需新知识点: 列表，字典
+

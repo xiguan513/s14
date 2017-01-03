@@ -148,7 +148,7 @@ pycharm 常用功能
         >>> '{:,}'.format(123456789)
         '123,456,789'
 
-判断语句：
+python语句：
         Python程序语言指定任何非0和非空（null）值为true，0 或者 null为false。
         条件判断
             Python 中if语句用于控制程序的执行，当判断条件成立时(非0)，则执行后面的语句，执行内容可以是是多行，以缩进来区分表示同一范围。
@@ -193,12 +193,12 @@ pycharm 常用功能
                     执行语句……
             当while语句正常执行结束以后，才执行else语句
         4	断点
-        break
-        在语句块执行过程中终止循环，并且跳出整个循环
-        continue
-                在语句块执行过程中终止当前循环，跳出该次循环，执行下一次循环。
-        pass
-                pass是空语句，是为了保持程序结构的完整性
+            break
+            在语句块执行过程中终止循环，并且跳出整个循环
+            continue
+                    在语句块执行过程中终止当前循环，跳出该次循环，执行下一次循环。
+            pass
+                    pass是空语句，是为了保持程序结构的完整性
 
 
 
@@ -243,6 +243,30 @@ pycharm 常用功能
                 print(i,end=" ")
                 for a in 'spam':
                     print(a,end=" ")
+
+        while 循环：猜数字游戏，使用到continue
+
+            number=10
+            Flag=True
+            while Flag:
+                get_number = input("Please input your lucky number: ")
+                if get_number.isdigit():
+                    get_number=int(get_number)
+                else:
+                    print("need number!")
+                    continue
+                if get_number==number:
+                    print("This is your lucky number!")
+                    Flag=False
+                elif get_number>number:
+                    print("The number you entered is too large")
+                elif get_number<number:
+                    print("The number you entered is too small.")
+            else:
+                print("game over!")
+
+
+更多字符串操作在  python修订 里面查看
 
 作业：
     1 博客

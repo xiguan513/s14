@@ -151,47 +151,47 @@ pycharm 常用功能
 判断语句：
         Python程序语言指定任何非0和非空（null）值为true，0 或者 null为false。
         条件判断
-                Python 中if语句用于控制程序的执行，当判断条件成立时(非0)，则执行后面的语句，执行内容可以是是多行，以缩进来区分表示同一范围。
-                else 为可选语句，当需要在条件不成立是执行内容则可以执行相关语句。
-                if 语句的判断条件可以用>（大于）、<(小于)、==（等于）、>=（大于等于）、<=（小于等于）
-        != (不等于)来表示其关系
-                如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。
-                当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，即大于和小于在没有括号的情况下会比与或要优先判断。
+            Python 中if语句用于控制程序的执行，当判断条件成立时(非0)，则执行后面的语句，执行内容可以是是多行，以缩进来区分表示同一范围。
+            else 为可选语句，当需要在条件不成立是执行内容则可以执行相关语句。
+            if 语句的判断条件可以用>（大于）、<(小于)、==（等于）、>=（大于等于）、<=（小于等于）
+            != (不等于)来表示其关系
+            如果判断需要多个条件需同时判断时，可以使用 or （或），表示两个条件有一个成立时判断条件成功；使用 and （与）时，表示只有两个条件同时成立的情况下，判断条件才成功。
+            当if有多个条件时可使用括号来区分判断的先后顺序，括号中的判断优先执行，此外 and 和 or 的优先级低于>（大于）、<（小于）等判断符号，即大于和小于在没有括号的情况下会比与或要优先判断。
 
         1	判断
-        if 判断条件：
-            执行语句……
-        else：
-                    执行语句……
+            if 判断条件：
+                执行语句……
+            else：
+                执行语句……
         2	多重判断
             if 判断条件1:
-            执行语句1……
-        elif 判断条件2:
-            执行语句2……
-        elif 判断条件3:
-            执行语句3……
-        else:
-                   执行语句4……
+                执行语句1……
+            elif 判断条件2:
+                执行语句2……
+            elif 判断条件3:
+                执行语句3……
+            else:
+                执行语句4……
         3	循环
         for:
-        for iterating_var in sequence:
-                statements(s)
+            for iterating_var in sequence:
+                    statements(s)
 
-        for iterating_var in sequence:
-                statements(s)
+            for iterating_var in sequence:
+                    statements(s)
             else:
                 执行语句……
 
             当for语句正常执行结束以后，才执行else语句
         while:
-        while 判断条件：
-                执行语句……
+            while 判断条件：
+                    执行语句……
 
-        while 判断条件：
-                执行语句……
+            while 判断条件：
+                    执行语句……
             else:
-                执行语句……
-                        当while语句正常执行结束以后，才执行else语句
+                    执行语句……
+            当while语句正常执行结束以后，才执行else语句
         4	断点
         break
         在语句块执行过程中终止循环，并且跳出整个循环
@@ -203,6 +203,46 @@ pycharm 常用功能
 
 
     例子：
+        name="song"
+        username=input("Please input your name: ")
+        判断：根据用户输入的名字判断是否正确
+            if username==name:
+                print("My name is {username}".format(username=username))
+            else:
+                print("Sorry not found user!")
+        多重判断：根据输入的成绩判断成绩的状态
+            get_achievement=input("Please input your achievement: ")
+
+            if get_achievement.isdigit():
+                get_achievement=int(get_achievement)
+                if 60<=get_achievement<=70:
+                    print("Your grades have passed.")
+                elif  70<=get_achievement<=80:
+                    print("Your grades are good.")
+                elif 80<get_achievement<=100:
+                    print("Your grades are excellent.")
+                elif 100<get_achievement:
+                    print("error grades!")
+                else:
+                    print("You need to work hard")
+            else:
+                print("Please input number!")
+
+        for循环：简单for循环
+            for i in  list(range(1,10)):
+                print(i,end=" ")
+        for多重循环：乘法口诀
+            for i in list(range(1,10)):
+                for j in list(range(1,i+1)):
+                    print("%dx%d=%d" % (j,i,j*i),end=" ")
+                    if j==i:
+                        print("\r")
+                  ：多重循环输出实例
+            for i in  list(range(1,10)):
+                print("\r")
+                print(i,end=" ")
+                for a in 'spam':
+                    print(a,end=" ")
 
 作业：
     1 博客

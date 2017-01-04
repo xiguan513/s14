@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+"""
+    三级菜单
+    可依次选择进入各子菜单
+    所需知识点: 列表，字典
+"""
+
+
+
 china={"BeiJing":{"HaiDianQu":{"ZhongGuanCun":"No. 11"},
                   "ChaoYangQu":{"SanYuanQiao":"No. 12"}},
        "Shanghai":{"PuDongQu":{"Airport":"No. 21"},
@@ -24,13 +32,13 @@ while True:
         city_list.append(city)
     print("Number:%-35s Qi:%-2s" % ("e", "exit"), end="\n")
     while True:
-        try:
+        try:#异常检测
             go_city=input("Please enter the city number you are going to： ")
             if go_city.isdigit():
                 go_city=int(go_city)
             elif go_city=="e":
                 break
-            for k,i in enumerate(china[city_list[go_city]]):
+            for k,i in enumerate(china[city_list[go_city]]):#通过字典取值
                 print(k,i)
                 go1_list.append(i)
             go1_city=int(input("Please input your number: "))

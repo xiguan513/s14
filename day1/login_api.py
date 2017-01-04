@@ -1,6 +1,14 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
+"""
+    输入用户名密码
+    认证成功后显示欢迎信息
+    输错三次后锁定
+    提供管理员解锁
+
+"""
+
 Flag_user=True
 
 user_pass={"song":123456,

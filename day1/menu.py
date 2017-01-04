@@ -17,6 +17,8 @@ print("#"*60)
 while True:
     city_list = []
     go_list = []
+    go1_list = []
+    go2_list = []
     for num, city in enumerate(china):
         print("Number:%-35d City:%-2s" % (num, city), end="\n")
         city_list.append(city)
@@ -30,6 +32,16 @@ while True:
                 break
             for k,i in enumerate(china[city_list[go_city]]):
                 print(k,i)
+                go1_list.append(i)
+            go1_city=int(input("Please input your number: "))
+            for k,i in enumerate(china[city_list[go_city]][go1_list[go1_city]]):
+                print(k,i)
+                go2_list.append(i)
+            go2_city=int(input("Please inpur your number: "))
+            for i in china[city_list[go_city]][go1_list[go1_city]][go2_list[go2_city]]:
+                print(i,end="")
+            else:
+                print("\n")
 
         except IndexError:
             print("Please enter the correct city number")

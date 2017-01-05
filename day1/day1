@@ -237,7 +237,7 @@ python语句：
                     print("%dx%d=%d" % (j,i,j*i),end=" ")
                     if j==i:
                         print("\r")
-                  ：多重循环输出实例
+        for多重循环：多重循环输出实例
             for i in  list(range(1,10)):
                 print("\r")
                 print(i,end=" ")

@@ -41,11 +41,19 @@ while True:
             for k,i in enumerate(china[city_list[go_city]]):#通过字典取值
                 print(k,i)
                 go1_list.append(i)
-            go1_city=int(input("Please input your number: "))
+            go1_city=input("Please input your number: ")
+            if go1_city.isdigit():
+                go1_city=int(go_city)
+            elif go1_city=="e":
+                break
             for k,i in enumerate(china[city_list[go_city]][go1_list[go1_city]]):
                 print(k,i)
                 go2_list.append(i)
-            go2_city=int(input("Please inpur your number: "))
+            go2_city=input("Please inpur your number: ")
+            if go2_city.isdigit():
+                go2_city=int(go_city)
+            elif go2_city=="e":
+                break
             for i in china[city_list[go_city]][go1_list[go1_city]][go2_list[go2_city]]:
                 print(i,end="")
             else:

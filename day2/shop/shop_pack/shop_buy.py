@@ -1,7 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*
 
+"""
+读取文件内容，
+转换内容到字典
+转换内容到列表
 
+"""
 
 from s14.day2.shop.login_pack import login_api
 import sys

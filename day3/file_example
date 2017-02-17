@@ -1,63 +1,43 @@
 mysql
-
 MyISAM 无事务，表锁
 	.frm :表结构定义文件
 	.MYD ：表数据
 	.MYI ；索引
-
 InonoDB 事物，行锁
 	.frm 表结构
 	.ibd 表空间(数据和索引)
-
 	默认安装的mysql
 		自带的mysql库是MyIASM引擎
-
 常用命令
-
 	查看当前数据库支持的所有引擎
 	SHOW ENGINES;
-
 	查看表使用的引擎
 	SHOW TABLE STATUS LIKE 'user' \G
-
 连接数据库方式
 	JDBC
 	java 数据库连接
 	ODBC
 	开发 数据库连接
-
 mysql工具
 	客户端：
 		mysql,mysqladmin,mysqldump,mysqlimport,mysqlcheck
-
 	服务器端：
 		mysqld,mysqld_safe(安全线程)，mysqld_multi(多实例)
-
 	第三方：
 		mysqlbinlog
-
 mysql配置文件
 	查找配置文件路径存放顺序
 	/etc/my.cnf-->/etc/mysql/my.cnf-->$MYSQL_HOME/my.cnf-->default-extra-file=/path/my.cnf-->~/.my.cnf
-
 mysql区域配置文件
 [mysqld]
-
 [mysqld_safe]
-
 [clinet]
-
 [mysql]
-
-
 查看mysql默认使用的指令
 mysqld --help --verbose
-
-
 DBA:
 	开发DBA：数据库设计，sql语句，存储过程，存储函数，触发器
 	管理DBA：安装，升级，备份恢复，权限管理，监控，性能分析，基准测试
-
 数据类型：
 	数值型：
 		精确数值
@@ -74,14 +54,6 @@ DBA:
 			VARCHAR VARBINARY
 	日期时间类型：
 			date,time,datetime,timestam
-
-
-
-
-
-
-
-
 SQL语句：
 
 

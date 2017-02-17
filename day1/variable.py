@@ -24,3 +24,6 @@ username=input("Please input your name: ")
 age=input("Please input your age: ")
 print(type(age))
 print("My name is %s and my age is %d" % (username,int(age)))
+
+#输出时通过，输出的内容如果全是字符串可以使用string.join的用法
+print('acme', 50, 91, 12.2, sep=',')

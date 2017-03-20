@@ -11,7 +11,14 @@
     encode("utf-8")
     decode("utf-8")
 
+集合（set）
+
+函数
+http://egon09.blog.51cto.com/9161406/1834777
+装饰
 http://egon09.blog.51cto.com/9161406/1836763
+
+
 函数与函数式编程
     1.面向对象： 类    ---> class
     2.面向过程： 过程  ---> def

@@ -39,15 +39,25 @@
 
 #闭包函数 闭包是一类特殊的函数。如果一个函数定义在另一个函数的作用域中，并且函数中引用了外部函数的局部变量，那么这个函数就是一个闭包。
 
+#
+# def f():
+#     n=1
+#     def inner():
+#         print("n=",n)
+#     inner()
+#     n='x'
+#     inner()
+#
+# f()
+
 
 def f():
     n=1
     def inner():
-        print(n)
+        nonlocal n
+        n='x'
+    print("n1=",n)
     inner()
-    n='x'
-    inner()
+    print("n2=",n)
 
 f()
-
-

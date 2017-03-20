@@ -18,6 +18,9 @@ f1=open(nametime+"nginx.log","a+")
 
 
 #for 循环 if 模式
+# f=open(log_file)
+# nametime=time.strftime('%Y%m%d',time.localtime(time.time()))
+# f1=open(nametime+"nginx.log","a+")
 # for i in f.readlines():
 #     if reip.findall(i):
 #         disk_ip = reip.findall(i)
@@ -37,17 +40,43 @@ f1=open(nametime+"nginx.log","a+")
 
 
 #迭代模式
-for i in f.readlines():
-    if reip.findall(i):
-        disk_ip = reip.findall(i)
-        i=i.split(" ")
-        def ippop(ip):
-            if reip.findall(ip[1]):
-                ip[0] = ip[0].replace(",", "")
-                ip.pop(1)
-                ippop(ip)
-        ippop(i)
-        ip = " ".join(i)
-        f1.write(ip)
-f.close()
-f1.close()
+# f=open(log_file)
+# nametime=time.strftime('%Y%m%d',time.localtime(time.time()))
+# f1=open(nametime+"nginx.log","a+")
+# for i in f.readlines():
+#     if reip.findall(i):
+#         disk_ip = reip.findall(i)
+#         i=i.split(" ")
+#         def ippop(ip):
+#             if reip.findall(ip[1]):
+#                 ip[0] = ip[0].replace(",", "")
+#                 ip.pop(1)
+#                 ippop(ip)
+#         ippop(i)
+#         ip = " ".join(i)
+#         f1.write(ip)
+# f.close()
+# f1.close()
+
+
+#函数式
+nametime=time.strftime('%Y%m%d',time.localtime(time.time()))
+def NginxLog(file):
+    """ nginx log cut """
+    for i in file.readlines():
+        if reip.findall(i):
+            disk_ip = reip.findall(i)
+            i=i.split(" ")
+            def ippop(ip):
+                if reip.findall(ip[1]):
+                    ip[0] = ip[0].replace(",", "")
+                    ip.pop(1)
+                    ippop(ip)
+            ippop(i)
+            ip = " ".join(i)
+            with open(nametime+"nginx.log","a+") as file1:
+                file1.write(ip)
+    file.close()
+
+with open(log_file) as log_file:
+    NginxLog(log_file)

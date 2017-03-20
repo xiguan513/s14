@@ -5,14 +5,16 @@
 
 import re
 import sys
+import time
 
 reip = re.compile(r'(?<![\.\d])(?:\d{1,3}\.){3}\d{1,3}(?![\.\d])')
 
-#log_file='www.yilonghc.cn.log'
-log_file=sys.argv[1]
+log_file='b2c20170317.log'
+#log_file=sys.argv[1]
 
 f=open(log_file)
-f1=open("nginx1.log","a+")
+nametime=time.strftime('%Y%m%d',time.localtime(time.time()))
+f1=open(nametime+"nginx.log","a+")
 
 
 #for 循环 if 模式

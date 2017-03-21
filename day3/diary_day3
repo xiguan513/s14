@@ -12,6 +12,60 @@
     decode("utf-8")
 
 集合（set）
+    集合是无序的
+    键与键之间也不允许重复
+        首先来试着转换一个包含重复字母的字符串：
+        >>> set( 'letters' )
+        {'l', 'e', 't', 'r', 's'}
+        注意，上面得到的集合中仅含有一个 'e' 和一个 't'，尽管字符串 'letters' 里各自包含
+        两个。
+        再试试用列表建立集合：
+        >>> set( ['Dasher', 'Dancer', 'Prancer', 'Mason-Dixon'] )
+        {'Dancer', 'Dasher', 'Prancer', 'Mason-Dixon'}
+        再试试元组：
+        >>> set( ('Ummagumma', 'Echoes', 'Atom Heart Mother') )
+        {'Ummagumma', 'Atom Heart Mother', 'Echoes'}
+        当字典作为参数传入 set() 函数时，只有键会被使用：
+        >>> set( {'apple': 'red', 'orange': 'orange', 'cherry': 'red'} )
+        {'apple', 'cherry', 'orange'}
+
+    集合运算
+                >>> a=set([1,3,4,5,6])
+                >>> a
+                {1, 3, 4, 5, 6}
+                >>> b=set([2,3,4,7,8,9])
+                >>> b
+                {2, 3, 4, 7, 8, 9}
+
+        交集运算符，记作 & 或者 集合函数 intersection() 获取集合的交集（两集合共有元素）
+            & 运算符的结果是一个集合，它包含所有同时出现在你比较的两个清单中的元素。
+                >>> a & b
+                {3, 4}
+                >>> a.intersection(b)
+                {3, 4}
+        并集运算符  | 或者 union() 函数来获取集合的并集（至少出现在一个集合中的元素）
+                >>> a | b
+                {1, 2, 3, 4, 5, 6, 7, 8, 9}
+                >>> a.union(b)
+                {1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+        差集运算符 - 或者 difference() 可以获得两个集合的差集（出现在第一个集合但不出现在第二个集合）
+                >>> a - b
+                {1, 5, 6}
+                >>> b -a
+                {8, 9, 2, 7}
+                >>> a.difference(b)
+                {1, 5, 6}
+                >>> b.difference(a)
+                {8, 9, 2, 7}
+                >>>
+
+推导式
+    列表推导式
+    字典推导式
+    集合推导式
+    生成器推导式
+
 
 函数
 http://egon09.blog.51cto.com/9161406/1834777
@@ -26,15 +80,51 @@ http://egon09.blog.51cto.com/9161406/1836763
 函数是逻辑结构化和过程化的一种编程方法。
     return 定义返回值
     参数
+        >>> def test(a):
+            print(a)
+        >>> test(1)
+        1
+        >>>
+    关键字参数
+        >>> def test(a="test",b="ceshi"):
+	            print(a,b)
+        >>> test()
+        test ceshi
+        >>> test(b="Hello")
+        test Hello
     默认参数
-    强制参数
-    自定义参数
-    参数组
-    参数字典
+        >>> def menu(wine,entree,dessert='pudding'):
+	        return {'wine':wine,'entree':entree,'dessert':dessert}
+        >>> menu('chardonnay','chicken')
+        {'dessert': 'pudding', 'entree': 'chicken', 'wine': 'chardonnay'}
+        >>> menu('chardonnay','chikcen','doughnut')
+        {'dessert': 'doughnut', 'entree': 'chikcen', 'wine': 'chardonnay'}
+    强制参数 强制关键字参数放到某个*参数或者单个*后面
+        def menu(wine,*,entree): #指定entree为强制关键字参数
+            pass
+    参数组（*收集位置参数）
+        def menu(wine,*args):
+            pass
+    参数字典（**收集关键字参数）
+        def menu(wine,**kwargs):
+            pass
+
 
 函数变量作用域
     全局变量
     局部变量
+    内部函数
+        在函数中定义另外一个函数：
+            >>> def outer(a, b):
+            ...     def inner(c, d):
+            ...         return c + d
+            ...     return inner(a, b)
+            ...
+            >>>
+            >>> outer(4, 7)
+            11
+    闭包
+        内部函数可以看作一个闭包。闭包是一个可以由另一个函数动态生成的函数，并且可以改变和存储函数外创建的变量的值。
 
 递归
 

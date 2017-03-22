@@ -1,0 +1,37 @@
+表名 shopping
+字段
+商品id  商品名  商品价格  库存  卖家
+
+create table shopping (
+`id` int(11) not null AUTO_INCREMENT,
+`shopname` VARCHAR(20) not null,
+`shopprice` VARCHAR(20) not null,
+PRIMARY key (`id`)
+)ENGINE=MyISAM DEFAULT CHARSET=UTF8;
+
+
+
+表名  buy_shopping
+字段
+用户名  以购买商品  已购买商品价格
+
+create table buy_shopping (
+`username` VARCHAR(20) not null,
+`totalamount` VARCHAR(20) not null,
+`buyshop` VARCHAR(20) not NULL,
+`buyprice` VARCHAR(20) not null,
+`residualamount` VARCHAR(20) not null
+)
+
+表名  amount
+
+用户名  总金额
+create table amount(
+`username` VARCHAR(20) not null,
+`totalamount` VARCHAR(20) not null
+)
+
+
+删除字段
+ALTER TABLE `buy_shopping`
+DROP COLUMN `residualamount`;

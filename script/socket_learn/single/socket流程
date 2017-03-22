@@ -1,0 +1,11 @@
+
+"""
+指定套接字家族地址，和哪种套接字连接
+tcpsock=socket(socket_famil,socket_type,protocol=0)
+tcpsock.bind() 套接字与地址绑定
+tcosock.listen() 监听连接
+data=tcpsock.accept() 接受客户端连接，为阻塞模式，执行被暂停直到连接到达
+data.recv/data.send() 对话发送接收数据
+data.close() 关闭客户端套接字
+tcpsock.close()关闭服务器套接字
+"""

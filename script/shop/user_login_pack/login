@@ -1,0 +1,71 @@
+用户登录系统
+
+设计登录原型
+
+    1, 登录用户验证,判断是否有此用户,没有此用户可以注册用户
+    2, 判断是否在黑名单中,如果在禁止登录并提示,如果不在可以登录
+    3, 输入密码输错3次加入黑名单
+    4, 注册用户时判断邮箱格式，性别是否正确
+
+商店原型
+    1, 用户登录成功以后，显示产品价格信息以及产品编号
+    2, 输入产品编号购买产品
+    3, 设计用户资金表，用户产品购买表，商品价格对应表
+
+数据库设计
+    1, 用户表
+      id  用户名 密码  注册名称  性别   黑名单   电话   邮箱  注册时间  IP
+
+      create table user_login (
+        `id` int(11) NOT NULL AUTO_INCREMENT,
+        `username` VARCHAR(20) not null,
+        `userpass` VARCHAR(20) not null,
+        `alisaname` VARCHAR(20) not null,
+        `sex` enum('男','女'),
+        `blacklist` enum('0','1'),
+        `phone` VARCHAR(11),
+        `email` VARCHAR(30),
+        `regisdates` DATE,
+        `ip`  VARCHAR(15),
+        PRIMARY key (`id`)
+        ) ENGINE=MyISAM DEFAULT CHARSET=UTF8;
+    2, 用户资金表
+        CREATE TABLE `amount` (
+          `username` varchar(20) NOT NULL,
+          `totalamount` varchar(20) NOT NULL
+        ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    3, 用户商品购买表
+        CREATE TABLE `buy_shopping` (
+      `username` varchar(20) NOT NULL,
+      `buyshop` varchar(20) NOT NULL,
+      `buyprice` varchar(20) NOT NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    4, 商品价格对应表
+    CREATE TABLE `shopping` (
+      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `shopname` varchar(20) NOT NULL,
+      `shopprice` varchar(20) NOT NULL,
+      PRIMARY KEY (`id`)
+    ) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+    -- ----------------------------
+    -- Records of shopping
+    -- ----------------------------
+    INSERT INTO `shopping` VALUES ('1', 'iphone4', '2000');
+    INSERT INTO `shopping` VALUES ('2', 'iphone5', '4120');
+    INSERT INTO `shopping` VALUES ('3', 'iphone6', '5528');
+    INSERT INTO `shopping` VALUES ('4', 'iphone7', '6258');
+    INSERT INTO `shopping` VALUES ('5', 'huawie3', '2000');
+    INSERT INTO `shopping` VALUES ('6', 'huawie4', '3890');
+    INSERT INTO `shopping` VALUES ('7', 'book', '20.6');
+    INSERT INTO `shopping` VALUES ('8', 'office', '12.5');
+    INSERT INTO `shopping` VALUES ('9', 'cat', '201');
+
+
+    增加字段限制输入密码错误次数
+    ALTER TABLE `user_login`
+    ADD COLUMN `blacknum`  varchar(1) NULL AFTER `blacklist`;
+    插入数据
+    INSERT INTO `dream`.`user_login` (`id`, `username`, `userpass`, `alisaname`, `sex`, `blacklist`, `phone`, `email`, `regisdates`, `ip`) VALUES ('2', 'test1', '123456', '习惯1', '男', '0', '13641230628', 'songbing513@163.com', '2016-10-09', '192.168.0.142');
+    更新字段信息
+    UPDATE `dream`.`user_login` SET `blacknum`='2' WHERE username='test';

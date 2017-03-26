@@ -18,3 +18,5 @@ c=consumer(name)
 c.__next__()#恢复生成器
 c.send("韭菜馅")#给yield传值并恢复生成器
 
+
+

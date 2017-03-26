@@ -4,6 +4,7 @@
 
 
 import time
+#生产着模型
 def consumer(name):
     print("%s 准备吃包子啦!" %name)
     while True:
@@ -13,9 +14,10 @@ def consumer(name):
 # c = consumer("ChenRonghua")
 # c.__next__()
 
+#消费者
 def producer(name):
-    c = consumer('A')
-    c2 = consumer('B')
+    c = consumer('A') #生产者
+    c2 = consumer('B')#
     c.__next__()
     c2.__next__()
     print("%s开始准备做包子啦!" % name)

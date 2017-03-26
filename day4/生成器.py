@@ -13,9 +13,16 @@ def fib(max):
 
 b=fib(10)
 
+# print(b.__next__())
+# print(b.__next__())
+# print(b.__next__())
+
+import time
+
 while True:
     try:
         f=b.__next__()
+        time.sleep(2)
         print('f:',f)
     except StopIteration as e:
         print(e)

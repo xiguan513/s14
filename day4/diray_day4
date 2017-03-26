@@ -29,6 +29,25 @@ http://www.cnblogs.com/alex3714/articles/5765046.html
             >>> g.__next__()
             3
 
+     def fib(max):
+        n,a,b=0,0,1
+        while n < max:
+            #print(b)
+            yield b#中断程序直接返回值，并保存函数当前运行状态，提供函数返回点
+            a,b=b,a+b
+            n+=1
+        return 'done'
+
+    b=fib(10)
+
+    # print(b.__next__())
+    # print(b.__next__())
+    # print(b.__next__())
+
+
+    #next: 只调用yield，不给yield传值，并恢复生成器
+    #send: 调用yield的同时给yield传值，并恢复生成器
+
      迭代器
 
 

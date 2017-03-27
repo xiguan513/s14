@@ -44,9 +44,9 @@ http://www.cnblogs.com/alex3714/articles/5765046.html
 
         b=fib(10)
 
-        # print(b.__next__())
-        # print(b.__next__())
-        # print(b.__next__())
+        # print(b.__next__())#print(next(b))
+        # print(b.__next__())#print(next(b))
+        # print(b.__next__())#print(next(b))
 
 
         #next: 只调用yield，不给yield传值，并恢复生成器

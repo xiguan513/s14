@@ -1,0 +1,37 @@
+1. 定义
+	模块：本质就是.py结尾的python文件
+		  用来组织python代码，实现某个功能
+
+	包：本质就是一个目录必须是带(__init__.py的文件)
+		用来从逻辑上组织模块
+
+
+
+2. 导入方法
+	import modle_name
+	from modle_name import modle_fun
+	from modle_name import modle_fun as fun_name
+
+
+
+3. import本质
+	导入模块的本质就是把python文件重新做解释
+	导入包的本质就是解释包下面的__init__的文件
+
+4. 导入优化
+
+5. 模块分类
+
+	标准模块
+		os，sys,time,datetime
+	开源模块
+		shutil 模块
+		shelve
+		xml
+		PyYAML
+		ConfigParser python2
+		configparser python3
+		hashlib
+
+6 作业写个计算器
+

@@ -1,0 +1,3 @@
+类
+    静态方法：@staticmethod 静态方法无需传入self参数，类成员方法需传入代表本类的cls参数；
+    属性方法：@classmethod

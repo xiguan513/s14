@@ -1,32 +1,33 @@
 #!/usr/bin/env python
 #-*- coding: utf-8 -*-
 
-class Myclass:
-    name='This is class variable'
-    n='This test n '
-    def __init__(self,name):
-        self.name=name
+class Myclass(object):
+    n='This test n '#类属性
+    def __init__(self,name):#析构函数
+        self.name=name#实例属性
+        self.__age=12#私有属性
 
-    def say(self):
-        print "show %s name " % self.name
+    def say(self):#实例方法
+        return "show %s name ,age is %s" % (self.name,self.__age)
 
-    def __del__(self):
-        print "析构函数"
+    def __eat(self):#私有方法
+        return "ceshi"
 
-# Myclass.n="修该类变量"
-#
-# a=Myclass("song")
-# a.say()
-# print a.name
-# a.n="更该实力a变量"
-# print '类变量N',a.n
-#
-#
-# print "+++++++++++++++++++++++++"
-# a1=Myclass("bing")
-# a1.say()
-# print a1.name
-# print "类变量N",a1.n
+    # def __del__(self):
+    #     print "析构函数"
 
-b=Myclass("song")
-b.say()
+Myclass.n="修该类属性" #类属性
+Myclass.name="修该name属性" #类属性
+print "类属性",Myclass.name#类属性
+a=Myclass("song")
+print '类属性a的n属性:',a.n
+b=Myclass("bing")
+print '类属性b的n属性:',b.n
+
+print "实例a方法say:" ,a.say()#实例方法
+print "实例b方法say:" ,b.say()#实例方法
+print "实例属性name:",a.name #实例属性
+a.n="更该实例a的n属性"
+print '类属性a的n属性:',a.n
+print '类属性b的n属性:',b.n
+

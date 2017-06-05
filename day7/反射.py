@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
 
-class test(object):
+class fan(object):
     name='xiaohua'
     def run(self):
         return "Hello World"
 
 
 if __name__=="__main__":
-    t=test()
+    t=fan()
     if hasattr(t,"name"):
         print "判断对象有name属性"
 
@@ -43,11 +43,38 @@ if __name__=="__main__":
 
 
     # 判断方法say是否存在，如果不存，使用setattr添加方法，在使用getattr获取方法
-    def say():
-        print "我在说话,添加的说话方法"
+    # sanfan方法名字，say对应的添加的新函数方法 t.sayfan=say()
+    def say(self,age):
+        print "%s在说话,添加的说话方法 %s" % (self.name,age)
     if hasattr(t,"say"):
         pass
     else:
-        setattr(t,"say",say)
-        getsay=getattr(t,"say")
-        t.say()
+        setattr(t,"sayfan",say)
+        getfan = getattr(t,"sayfan")
+        getfan(t,22)
+
+    '''
+    不加参数的方法
+    def say(self):
+        print "%s在说话,添加的说话方法 %s" % (self.name)
+
+
+    if hasattr(t, "say"):
+        pass
+    else:
+        setattr(t, "sayfan", say)
+        getfan = getattr(t, "sayfan")
+        getfan(t)
+    '''
+
+    # 删除对象的属性或者方法
+    # if hasattr(t,"name"):
+    #     delattr(t,"name")
+    #     getname=getattr(t,"name")
+    #     print getname
+
+
+try:
+    pass
+except Exception as e:
+    pass

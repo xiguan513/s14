@@ -10,3 +10,34 @@
 
         新式类
 
+
+    Python的反射方法：
+        hasattr() getattr() setattr() delattr()函数使用方法详解
+            hasattr(object, name)
+                判断一个对象里面是否有name属性或者name方法，返回BOOL值，有name特性返回True， 否则返回False。
+                需要注意的是name要用括号括起来
+
+            getattr(object, name[,default])
+                获取对象object的属性或者方法
+                    如果是返回的对象的属性直接打印出来，如果不存在，报错，或者指定打印出默认值，默认值可选。
+                    如果是返回的对象的方法，返回的是方法的内存地址，如果需要运行这个方法，
+                可以在后面添加一对括号。
+
+            setattr(object, name, values)
+                给对象的属性赋值或者方法，若属性不存在，先创建再赋值。
+
+            delattr(object,name)
+                删除对象的属性或者方法
+
+
+异常处理
+    处理报错
+
+
+Socket网络编程
+
+    发送信息
+        py2
+            支持字符串或者字节
+        py3
+            只支持字节可以通过encode和decode对中文进行转换

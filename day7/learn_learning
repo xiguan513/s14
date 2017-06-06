@@ -1,40 +1,118 @@
 类
     静态方法：需要通过修饰器"@staticmethod"来进行修饰，静态方法不需要多定义参数；使其方法变成普通函数
-    属性方法：
-        类方法：是类对象所拥有的方法，需要用修饰器"@classmethod"来标识其为类方法，对于类方法，
-               第一个参数必须是类对象，一般以"cls"作为第一个参数（当然可以用其他名称的变量作为其第一个参数，
-               但是大部分人都习惯以'cls'作为第一个参数的名字，就最好用'cls'了），能够通过实例对象和类对象去访问。
 
-    装饰器属性：
+    类方法：是类对象所拥有的方法，需要用修饰器"@classmethod"来标识其为类方法，对于类方法，
+           第一个参数必须是类对象，一般以"cls"作为第一个参数（当然可以用其他名称的变量作为其第一个参数，
+           但是大部分人都习惯以'cls'作为第一个参数的名字，就最好用'cls'了），能够通过实例对象和类对象去访问。
+
+    装饰器属性方法：
+        将类方法转换为只读属性，重新实现一个属性的setter和getter方法
+        在普通方法的基础上添加 @property 装饰器，方法转属性（旧式类，和新式类不同的property装饰器方法）,此属性是实例属性
         旧式类
 
         新式类
 
 
-    Python的反射方法：
-        hasattr() getattr() setattr() delattr()函数使用方法详解
-            hasattr(object, name)
-                判断一个对象里面是否有name属性或者name方法，返回BOOL值，有name特性返回True， 否则返回False。
-                需要注意的是name要用括号括起来
+    模块动态导入
 
-            getattr(object, name[,default])
-                获取对象object的属性或者方法
-                    如果是返回的对象的属性直接打印出来，如果不存在，报错，或者指定打印出默认值，默认值可选。
-                    如果是返回的对象的方法，返回的是方法的内存地址，如果需要运行这个方法，
+
+Python的反射方法：
+    hasattr() getattr() setattr() delattr()函数使用方法详解
+        hasattr(object, name)
+            判断一个对象里面是否有name属性或者name方法，返回BOOL值，有name特性返回True， 否则返回False。
+            需要注意的是name要用括号括起来
+
+        getattr(object, name[,default])
+            获取对象object的属性或者方法
+                如果是返回的对象的属性直接打印出来，如果不存在，报错，或者指定打印出默认值，默认值可选。
+                如果是返回的对象的方法，返回的是方法的内存地址，如果需要运行这个方法，
                 可以在后面添加一对括号。
 
-            setattr(object, name, values)
-                给对象的属性赋值或者方法，若属性不存在，先创建再赋值。
+        setattr(object, name, values)
+            给对象的属性赋值或者方法，若属性不存在，先创建再赋值。
 
-            delattr(object,name)
-                删除对象的属性或者方法
+        delattr(object,name)
+            删除对象的属性或者方法
 
 
 异常处理
-    处理报错
+
+    1 首先，执行 try 子句 （在 try 和 except 关键字之间的部分）。
+    2 如果没有异常发生， except 子句 在 try 语句执行完毕后就被忽略了。
+    3 如果在 try 子句执行过程中发生了异常，那么该子句其余的部分就会被忽略。
+    4 如果异常匹配于 except 关键字后面指定的异常类型，就执行对应的except子句。5 然后继续执行 try 语句之后的代码。
+    6 如果发生了一个异常，在 except 子句中没有与之匹配的分支，它就会传递到上一级 try 语句中。
+    7 如果最终仍找不到对应的处理语句，它就成为一个 未处理异常，终止程序运行，显示提示信息。
+    8 一个 try 语句可能包含多个 except 子句，分别指定处理不同的异常。至多只会有一个分支被执行。
+      异常处理程序只会处理对应的 try 子句中发生的异常，在同一个 try 语句中，其他子句中发生的异常则不作处理。
+      一个 except 子句可以在括号中列出多个异常的名字
+    9 如果try语句块没有异常时执行此语句
+    10 不管try是否有异常出现，都执行此语句
+
+
+
+    try:
+        pass
+    except IndexError as mes:#as 抓取异常并命名为mes
+        pass
+    except NameError as mes:#指定错误已知的错误一次
+        pass
+    except (NameError,IndexError) as mes:#指定多个异常
+        pass
+    except Exception as mes:#抓取所有异常处理
+        pass
+    else:#try语句没有错误的时候执行
+        pass
+    finally:#不管try语句是否有错误，都执行
+        pass
+
 
 
 Socket网络编程
+
+    使用socket时需要指定Socket Family（地址簇），包括以下几种：
+    socket.AF_UNIX       只能够用于单一的Unix系统进程间通信
+    socket.AF_INET      用于主机之间的网络通信
+    socket.AF_INET6    IPv6通信
+    若想实现主机之间的通信，我们就得使用socket.AF_INET
+
+    确认地址簇后，还需要指定socket 数据类型
+    socket.SOCK_STREAM     流式socket, for TCP
+    socket.SOCK_DGRAM       数据报式socket, for UDP
+    socket.SOCK_RAW    原始套接字，普通的套接字无法处理ICMP、IGMP等网络报文，而SOCK_RAW可以；其次，SOCK_RAW也可以处理特殊的IPv4报文；此外，利用原始套接字，可以通过IP_HDRINCL套接字选项由用户构造IP头。
+    socket.SOCK_RDM   是一种可靠的UDP形式，即保证交付数据报但不保证顺序。SOCK_RAM用来提供对原始协议的低级访问，在需要执行某些特殊操作时使用，如发送ICMP报文。SOCK_RAM通常仅限于高级用户或管理员运行的程序使用。
+    socket.SOCK_SEQPACKET      可靠的连续数据包服务
+
+
+
+
+    server端
+    1. 第一步是创建socket对象。调用socket构造函数。如：
+        socket = socket.socket(family, type )
+        family参数代表地址家族，可为AF_INET或AF_UNIX。AF_INET家族包括Internet地址，AF_UNIX家族用于同一台机器上的进程间通信。
+        type参数代表套接字类型，可为SOCK_STREAM(流套接字)和SOCK_DGRAM(数据报套接字)。
+    2. 第二步是将socket绑定到指定地址。这是通过socket对象的bind方法来实现的：
+        socket.bind( address )
+        由AF_INET所创建的套接字，address地址必须是一个双元素元组，格式是(host,port)。host代表主机，port代表端口号。如果端口号正在使用、主机名不正确或端口已被保留，bind方法将引发socket.error异常。
+    3. 第三步是使用socket套接字的listen方法接收连接请求。
+        socket.listen( backlog )
+        backlog指定最多允许多少个客户连接到服务器。它的值至少为1。收到连接请求后，这些请求需要排队，如果队列满，就拒绝请求。
+    4. 第四步是服务器套接字通过socket的accept方法等待客户请求一个连接。
+        connection, address = socket.accept()
+        调 用accept方法时，socket会时入“waiting”状态。客户请求连接时，方法建立连接并返回服务器。accept方法返回一个含有两个元素的 元组(connection,address)。第一个元素connection是新的socket对象，服务器必须通过它与客户通信；第二个元素 address是客户的Internet地址。
+    5. 第五步是处理阶段，服务器和客户端通过send和recv方法通信(传输 数据)。服务器调用send，并采用字符串形式向客户发送信息。send方法返回已发送的字符个数。服务器使用recv方法从客户接收信息。调用recv 时，服务器必须指定一个整数，它对应于可通过本次方法调用来接收的最大数据量。recv方法在接收数据时会进入“blocked”状态，最后返回一个字符 串，用它表示收到的数据。如果发送的数据量超过了recv所允许的，数据会被截短。多余的数据将缓冲于接收端。以后调用recv时，多余的数据会从缓冲区 删除(以及自上次调用recv以来，客户可能发送的其它任何数据)。
+    6. 传输结束，服务器调用socket的close方法关闭连接。
+
+    client端
+    1. 创建一个socket以连接服务器：socket = socket.socket( family, type )
+    2.使用socket的connect方法连接服务器。对于AF_INET家族,连接格式如下：
+        socket.connect( (host,port) )
+        host代表服务器主机名或IP，port代表服务器进程所绑定的端口号。如连接成功，客户就可通过套接字与服务器通信，如果连接失败，会引发socket.error异常。
+    3. 处理阶段，客户和服务器将通过send方法和recv方法通信。
+    4. 传输结束，客户通过调用socket的close方法关闭连接。
+
+
+
 
     发送信息
         py2

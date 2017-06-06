@@ -29,8 +29,8 @@ while True:
         with open(filename,'rb') as f:
             while True:
                 data=f.read(bufsize)
-                t=f.tell()
-                f.seek(t)
+                t=f.tell()#获取当前tell值
+                f.seek(t)#读取当前tell值以后的数据
                 if len(data)==0:
                     print "文件传输结束"
                     con.send("done")

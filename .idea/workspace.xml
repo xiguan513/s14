@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e8ea6cc-9ba4-458c-bc29-414c025248dc" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day7/网络cli文件.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day7/网络ser文件.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day7/网络ser文件.py" afterPath="$PROJECT_DIR$/day7/网络ser文件.py" />
     </list>
     <ignored path="s14.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,11 +53,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="网络ser文件.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="网络ser文件.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/day7/网络ser文件.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            <state relative-caret-position="308">
+              <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
               <folding>
                 <element signature="e#68#77#0" expanded="true" />
               </folding>
@@ -66,10 +65,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="网络cli文件.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="网络cli文件.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/day7/网络cli文件.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
+            <state relative-caret-position="180">
               <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
               <folding>
                 <element signature="e#45#58#0" expanded="true" />
@@ -136,8 +135,8 @@
         <option value="$PROJECT_DIR$/day7/网络ser.py" />
         <option value="$PROJECT_DIR$/day7/网络cli.py" />
         <option value="$PROJECT_DIR$/day7/网络cli2.py" />
-        <option value="$PROJECT_DIR$/day7/网络ser文件.py" />
         <option value="$PROJECT_DIR$/day7/网络cli文件.py" />
+        <option value="$PROJECT_DIR$/day7/网络ser文件.py" />
       </list>
     </option>
   </component>
@@ -754,7 +753,14 @@
       <option name="project" value="LOCAL" />
       <updated>1496712561527</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="socket网络编程单线程文件传输功能">
+      <created>1496718403100</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1496718403100</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -849,7 +855,8 @@
     <MESSAGE value="增加类hasattr,getattr函数用法" />
     <MESSAGE value="增加异常处理，socket网络编程" />
     <MESSAGE value="socket网络编程" />
-    <option name="LAST_COMMIT_MESSAGE" value="socket网络编程" />
+    <MESSAGE value="socket网络编程单线程文件传输功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="socket网络编程单线程文件传输功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1138,22 +1145,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day7/网络ser文件.py">
+    <entry file="file://$PROJECT_DIR$/day7/网络cli文件.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        <state relative-caret-position="180">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
           <folding>
-            <element signature="e#68#77#0" expanded="true" />
+            <element signature="e#45#58#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day7/网络cli文件.py">
+    <entry file="file://$PROJECT_DIR$/day7/网络ser文件.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+        <state relative-caret-position="308">
+          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
           <folding>
-            <element signature="e#45#58#0" expanded="true" />
+            <element signature="e#68#77#0" expanded="true" />
           </folding>
         </state>
       </provider>

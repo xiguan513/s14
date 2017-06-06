@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e8ea6cc-9ba4-458c-bc29-414c025248dc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day7/网络cli文件.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/day7/网络ser文件.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day7/网络cli.py" afterPath="$PROJECT_DIR$/day7/网络cli.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day7/网络cli2.py" afterPath="$PROJECT_DIR$/day7/网络cli2.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/day7/网络ser.py" afterPath="$PROJECT_DIR$/day7/网络ser.py" />
     </list>
     <ignored path="s14.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,16 +34,16 @@
     <SUITE FILE_PATH="coverage/s14$Calculator.coverage" NAME="Calculator Coverage Results" MODIFIED="1494727875719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day5" />
     <SUITE FILE_PATH="coverage/s14$menu_test.coverage" NAME="menu_test Coverage Results" MODIFIED="1483524157013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/s14$Loop_statement.coverage" NAME="Loop_statement Coverage Results" MODIFIED="1483412274545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
-    <SUITE FILE_PATH="coverage/s14$ser.coverage" NAME="网络ser Coverage Results" MODIFIED="1496712448707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
+    <SUITE FILE_PATH="coverage/s14$ser.coverage" NAME="网络ser文件 Coverage Results" MODIFIED="1496718025377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
     <SUITE FILE_PATH="coverage/s14$file_input.coverage" NAME="file_input Coverage Results" MODIFIED="1486612177788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/s14$.coverage" NAME="异常 Coverage Results" MODIFIED="1496647037372" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
     <SUITE FILE_PATH="coverage/s14$Unittests_in_hasttr_getattr_setattr_py.coverage" NAME="Unittests in hasttr_getattr_setattr.py Coverage Results" MODIFIED="1496368418622" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day6" />
     <SUITE FILE_PATH="coverage/s14$menu.coverage" NAME="menu Coverage Results" MODIFIED="1483524777988" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
-    <SUITE FILE_PATH="coverage/s14$cli2.coverage" NAME="网络cli2 Coverage Results" MODIFIED="1496712132978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
+    <SUITE FILE_PATH="coverage/s14$cli2.coverage" NAME="网络cli2 Coverage Results" MODIFIED="1496713441540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
     <SUITE FILE_PATH="coverage/s14$login.coverage" NAME="login Coverage Results" MODIFIED="1483508927998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/s14$login_apibak.coverage" NAME="login_apibak Coverage Results" MODIFIED="1483431504620" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day1" />
     <SUITE FILE_PATH="coverage/s14$class_vuals.coverage" NAME="class_vuals Coverage Results" MODIFIED="1496198600879" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day6" />
-    <SUITE FILE_PATH="coverage/s14$cli.coverage" NAME="网络cli Coverage Results" MODIFIED="1496712449627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
+    <SUITE FILE_PATH="coverage/s14$cli.coverage" NAME="网络cli文件 Coverage Results" MODIFIED="1496718026703" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/day7" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -55,32 +54,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="网络ser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day7/网络ser.py">
+      <file leaf-file-name="网络ser文件.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/day7/网络ser文件.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-              <folding />
+              <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+              <folding>
+                <element signature="e#68#77#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="网络cli.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/day7/网络cli.py">
+      <file leaf-file-name="网络cli文件.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/day7/网络cli文件.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="网络cli2.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/day7/网络cli2.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
-              <folding />
+            <state relative-caret-position="246">
+              <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+              <folding>
+                <element signature="e#45#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -140,9 +133,11 @@
         <option value="$PROJECT_DIR$/day7/反射.py" />
         <option value="$PROJECT_DIR$/day7/异常.py" />
         <option value="$PROJECT_DIR$/day7/learn_learning" />
-        <option value="$PROJECT_DIR$/day7/网络cli2.py" />
-        <option value="$PROJECT_DIR$/day7/网络cli.py" />
         <option value="$PROJECT_DIR$/day7/网络ser.py" />
+        <option value="$PROJECT_DIR$/day7/网络cli.py" />
+        <option value="$PROJECT_DIR$/day7/网络cli2.py" />
+        <option value="$PROJECT_DIR$/day7/网络ser文件.py" />
+        <option value="$PROJECT_DIR$/day7/网络cli文件.py" />
       </list>
     </option>
   </component>
@@ -211,12 +206,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\s14\s14\day7" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\s14\s14\day7" />
       <recent name="E:\s14\s14\day1" />
       <recent name="E:\s14\s14" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\s14\s14\day7" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -231,45 +227,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.网络cli2">
-    <configuration default="false" name="反射 (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="s14" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/反射.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="异常" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="s14" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/异常.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.网络ser文件">
     <configuration default="false" name="网络ser" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -322,6 +280,44 @@
       <module name="s14" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/网络cli2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="网络ser文件" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="s14" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/网络ser文件.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="网络cli文件" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/day7" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="s14" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/day7/网络cli文件.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -550,19 +546,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in hasttr_getattr_setattr.py" />
-      <item index="1" class="java.lang.String" itemvalue="Python.反射 (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.异常" />
-      <item index="3" class="java.lang.String" itemvalue="Python.网络ser" />
-      <item index="4" class="java.lang.String" itemvalue="Python.网络cli" />
-      <item index="5" class="java.lang.String" itemvalue="Python.网络cli2" />
+      <item index="1" class="java.lang.String" itemvalue="Python.网络ser" />
+      <item index="2" class="java.lang.String" itemvalue="Python.网络cli" />
+      <item index="3" class="java.lang.String" itemvalue="Python.网络cli2" />
+      <item index="4" class="java.lang.String" itemvalue="Python.网络ser文件" />
+      <item index="5" class="java.lang.String" itemvalue="Python.网络cli文件" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.网络cli" />
-        <item index="1" class="java.lang.String" itemvalue="Python.网络ser" />
+        <item index="0" class="java.lang.String" itemvalue="Python.网络cli文件" />
+        <item index="1" class="java.lang.String" itemvalue="Python.网络ser文件" />
         <item index="2" class="java.lang.String" itemvalue="Python.网络cli2" />
-        <item index="3" class="java.lang.String" itemvalue="Python.异常" />
-        <item index="4" class="java.lang.String" itemvalue="Python.反射 (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.网络cli" />
+        <item index="4" class="java.lang.String" itemvalue="Python.网络ser" />
       </list>
     </recent_temporary>
     <configuration default="true" type="tests" factoryName="Attests">
@@ -744,7 +740,21 @@
       <option name="project" value="LOCAL" />
       <updated>1496656085765</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="socket网络编程">
+      <created>1496712508166</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1496712508166</updated>
+    </task>
+    <task id="LOCAL-00023" summary="socket网络编程">
+      <created>1496712561527</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1496712561527</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -767,7 +777,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924107" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34375" sideWeight="0.49248928" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3392857" sideWeight="0.49248928" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -838,7 +848,8 @@
     <MESSAGE value="增加类几种装饰器的用法" />
     <MESSAGE value="增加类hasattr,getattr函数用法" />
     <MESSAGE value="增加异常处理，socket网络编程" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加异常处理，socket网络编程" />
+    <MESSAGE value="socket网络编程" />
+    <option name="LAST_COMMIT_MESSAGE" value="socket网络编程" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -847,14 +858,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/day1/login_api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="20" lean-forward="false" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/day1/day1" />
     <entry file="file://$PROJECT_DIR$/day1/login_api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1032,13 +1035,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/script/ftp/ftpserver/ftp_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/day6/class_vuals.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1105,6 +1101,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="492">
           <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1112,7 +1109,15 @@
     <entry file="file://$PROJECT_DIR$/day7/网络cli2.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="17" selection-end-column="18" />
+          <caret line="13" column="43" lean-forward="false" selection-start-line="13" selection-start-column="43" selection-end-line="13" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/网络cli.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1125,11 +1130,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/day7/网络cli.py">
+    <entry file="file://$PROJECT_DIR$/script/ftp/ftpserver/ftp_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="5" lean-forward="false" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="110">
+          <caret line="33" column="33" lean-forward="false" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="33" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/网络ser文件.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+          <folding>
+            <element signature="e#68#77#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/day7/网络cli文件.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="19" column="37" lean-forward="false" selection-start-line="19" selection-start-column="37" selection-end-line="19" selection-end-column="37" />
+          <folding>
+            <element signature="e#45#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

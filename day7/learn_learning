@@ -14,7 +14,16 @@
 
 
     模块动态导入
+        __import__
+        importlib
 
+    常用方法
+        __init__#在类实例创建之后调用
+        __new__#正是创建这个类实例的方法
+        __call__#如果两个括号表示执行call方法
+        __str__#返回一个字符串
+        __del__#析构函数
+        __metaclass__#定义类以怎样的形式被创建
 
 Python的反射方法：
     hasattr() getattr() setattr() delattr()函数使用方法详解

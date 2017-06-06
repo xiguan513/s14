@@ -58,7 +58,16 @@ Python的反射方法：
     9 如果try语句块没有异常时执行此语句
     10 不管try是否有异常出现，都执行此语句
 
+    raise 触发异常
 
+
+    断言 assert
+
+        assert condition
+        用来让程序测试这个condition，如果condition为false，那么raise一个AssertionError出来。逻辑上等同于：
+
+        if not condition:
+            raise AssertionError()
 
     try:
         pass

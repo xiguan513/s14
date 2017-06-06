@@ -16,16 +16,13 @@ sock.listen(5)
 while True:
     try:
         clnt, address = sock.accept()
-        recivedata=clnt.recv(1024)
-        print "client send: %s" % recivedata
         while True:
-            data=clnt.recv(1024).strip(" ")
+            data=clnt.recv(1024).strip()
             if not data:
-                print "这是空数据，请重新输入！"
                 break
             ip,port=address
-            print 'Recieve data: %s %s' % (data.decode('utf-8'),ip)
-            senddata=raw_input("发送数据:")
+            print 'Recieve data: %s %s %s' % (data,ip,port)
+            senddata=data.upper()
             clnt.send(senddata)
     except socket.error,e:
         print e

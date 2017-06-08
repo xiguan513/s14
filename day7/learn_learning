@@ -62,7 +62,7 @@ Python的反射方法：
 
 
     断言 assert
-
+        一般用作调用前对数据进行检查
         assert condition
         用来让程序测试这个condition，如果condition为false，那么raise一个AssertionError出来。逻辑上等同于：
 

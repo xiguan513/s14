@@ -9,6 +9,8 @@ socket 文件传输
 
 import os
 import socket
+import hashlib
+
 
 serfile = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 host = '0.0.0.0'
@@ -17,7 +19,7 @@ bufsize=1024
 addr = (host, port)
 serfile.bind(addr)
 serfile.listen(5)
-filename="1.zip"
+filename="1.rar"
 filesize=str(os.path.getsize(filename))
 text="ready %s" % filesize
 while True:
@@ -37,3 +39,4 @@ while True:
                     break
                 else:
                     con.sendall(data)
+                    print len(data)

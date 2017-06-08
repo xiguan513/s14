@@ -1,6 +1,5 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea/
-.gitignore
 __pycache__/
 day2/__pycache__/
 day2/shop/__pycache__/

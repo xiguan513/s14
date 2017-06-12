@@ -49,7 +49,6 @@ while True:
                     else:
                         con.sendall(data)
                         m.update(data)
-                        print len(data)
         else:
             print "文件不存在"
             con.send("file not found!")

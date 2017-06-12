@@ -5,3 +5,21 @@ hashlib md5加密
 
 sockerserver
 https://docs.python.org/2/library/socketserver.html
+
+BaseServer (父类)   ThreadingMixIn          BaseRquestHandler        ForkingMixIn
+
+TCPServer           ThreadingTCPServer      streamRequestHandler     ForkingTCPServer
+
+UDPServer           ThreadingUDPServer      DatagramRequestHandler   ForkingUDPServer
+
+
+BaseServer:  包含核心服务器功能和mix-in类的钩子，仅用于推导，这样不会创建这个类的实例，可用于TCPServer或UDPServer创建类的实例
+TCPServer/UDPServer: 基础的网络TCP/UDP服务器（继承BaseServer类）
+
+ThreadingMixIn：核心派出或线程功能，只用作mix-in类与一个服务器类配合实现一些异步性，不能直接实例化这个类，可用于ThreadingTCPServer或ThreadingUDPServer创建类的实例
+ThreadingTCPServer ：继承TCPServer类和ThreadingMixIn类
+ThreadingUDPServer ：继承UDPServer类和ThreadingUDPServer类
+
+BaseRequestHandler: 包含处理服务请求的核心功能，仅用于推导，这样无法创建这个类的实例，可用于streamRequestHandler或DatagramRequestHandler创建类的实例
+streamRequestHandler：基础BaseRequestHandler类实现TCP服务器的服务处理器,实例化操作
+DatagramRequestHandler： 基础BaseRequestHandler类实现UDP服务器的服务处理器，实例化操作

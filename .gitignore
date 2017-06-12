@@ -13,3 +13,4 @@ script/shop/user_login_pack/__init__.pyc
 script/shop/user_login_pack/login.pyc
 script/shop/user_login_pack/my_conf.pyc
 script/socket_learn/__init__.pyc
+*.rar

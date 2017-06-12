@@ -19,14 +19,21 @@ bufsize=1024
 addr = (host, port)
 serfile.bind(addr)
 serfile.listen(5)
-filename="1.rar"
-filesize=str(os.path.getsize(filename))
-text="ready %s" % filesize
+
 while True:
     con,add = serfile.accept()
-    con.send(text)
     recvdata=con.recv(bufsize)
-    if  "yes" in recvdata:
+    recvdata_list = recvdata.split(" ")
+    if  "get" in recvdata:
+        get_file_name=recvdata_list[1]
+        if os.path.exists(get_file_name):
+            filename = get_file_name
+            filesize = str(os.path.getsize(get_file_name))
+            text = "ready %s" % filesize
+            con.send(text)
+        else:
+            print "文件不存在"
+            con.send("file not found!")
         print "客户端发送信息：%s" % recvdata#和客户端确认是否准备开始传送数据
         with open(filename,'rb') as f:
             while True:

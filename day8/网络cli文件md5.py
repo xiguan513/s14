@@ -14,31 +14,28 @@ host = '192.168.1.75'
 port = 9200
 addr = (host, port)
 serfile.connect(addr)
-filename="3.rar"
+filename="5.rar"
 file=open(filename,'ab')
-
+bufsize=1024
 get_file=raw_input("Please input filename: ").strip(" ")#获取输出文件名
 
-recv_file_name=serfile.send(get_file)#发送需要获取的文件信息
-
-filesize=serfile.recv(1024)
+serfile.send(get_file)#发送需要获取的文件信息
+filesize=serfile.recv(1024)#接收服务端的确认信息
 if "ready" in filesize:
     print "服务端原始文件size：%s" % filesize
     filesize=filesize.split(" ")#获取服务端传送过来，原本文件的字节数
-    time.sleep(5)
     while True:
-        data=serfile.recv(1024)
-        if "done" in data:
-            serfile.send("md5")
-            md5 = serfile.recv(1024)
-            if md5==m1.hexdigest():
-                print "文件一样\n",
+        surplus_file_size = int(filesize[1]) - int(os.path.getsize(filename))
+        print "剩余文件大小",surplus_file_size
+        data = serfile.recv(bufsize)
+        if surplus_file_size < 1024:  # 判断接收到的文件和传送的文件大小是否一致，如果不一致，重新再接收剩余的部分
+            print "测试最后的数据",data
+            bufsize=surplus_file_size
+        elif "done" in data:
             break
-        else:
-            print len(data)
-            file.write(data)
-            m1.update(data)
-    file.close()
+        file.write(data)
+        file.flush()
+
     print "原始文件size: %d  已接收文件size: %d" % (int(filesize[1]),os.path.getsize(filename))
 
 

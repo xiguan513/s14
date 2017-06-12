@@ -16,7 +16,6 @@ addr = (host, port)
 serfile.connect(addr)
 filename="5.rar"
 file=open(filename,'ab')
-bufsize=1024
 get_file=raw_input("Please input filename: ").strip(" ")#获取输出文件名
 
 serfile.send(get_file)#发送需要获取的文件信息
@@ -27,12 +26,11 @@ if "ready" in filesize:
     while True:
         surplus_file_size = int(filesize[1]) - int(os.path.getsize(filename))
         print "剩余文件大小",surplus_file_size
-        data = serfile.recv(bufsize)
         if surplus_file_size < 1024:  # 判断接收到的文件和传送的文件大小是否一致，如果不一致，重新再接收剩余的部分
-            print "测试最后的数据",data
             bufsize=surplus_file_size
-        elif "done" in data:
-            break
+        else:
+            bufsize=1024
+        data = serfile.recv(bufsize)
         file.write(data)
         file.flush()
 

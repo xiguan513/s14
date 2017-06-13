@@ -6,20 +6,66 @@ hashlib md5加密
 sockerserver
 https://docs.python.org/2/library/socketserver.html
 
-BaseServer (父类)   ThreadingMixIn          BaseRquestHandler        ForkingMixIn
+ ForkingMixIn     BaseServer (父类)         ThreadingMixIn          BaseRquestHandler
+    |                   |                          |
+    |                   |                          |
+    v                   v                          v
+ForkingTCPServer <---TCPServer -------->ThreadingTCPServer          streamRequestHandler
 
-TCPServer           ThreadingTCPServer      streamRequestHandler     ForkingTCPServer
-
-UDPServer           ThreadingUDPServer      DatagramRequestHandler   ForkingUDPServer
+ForkingUDPServer <---UDPServer -------->ThreadingUDPServer          DatagramRequestHandler
 
 
 BaseServer:  包含核心服务器功能和mix-in类的钩子，仅用于推导，这样不会创建这个类的实例，可用于TCPServer或UDPServer创建类的实例
 TCPServer/UDPServer: 基础的网络TCP/UDP服务器（继承BaseServer类）
 
+
 ThreadingMixIn：核心派出或线程功能，只用作mix-in类与一个服务器类配合实现一些异步性，不能直接实例化这个类，可用于ThreadingTCPServer或ThreadingUDPServer创建类的实例
 ThreadingTCPServer ：继承TCPServer类和ThreadingMixIn类
 ThreadingUDPServer ：继承UDPServer类和ThreadingUDPServer类
 
+
 BaseRequestHandler: 包含处理服务请求的核心功能，仅用于推导，这样无法创建这个类的实例，可用于streamRequestHandler或DatagramRequestHandler创建类的实例
 streamRequestHandler：基础BaseRequestHandler类实现TCP服务器的服务处理器,实例化操作
-DatagramRequestHandler： 基础BaseRequestHandler类实现UDP服务器的服务处理器，实例化操作
+DatagramRequestHandler： 继承BaseRequestHandler类实现UDP服务器的服务处理器，实例化操作
+
+
+ForkingMixIn/ThreadingMixIn：实现了核心的进程化或线程化的功能；作为混合类，与服务器类一并使用以提供一些异步特性；这个类不会直接实例化。
+ForkingTCPServer/ ForkingUDPServer：继承ForkingMixIn和TCPServer/UDPServer类
+
+
+TCPServer，UDPServer，UnixStreamServer，UnixDatagramServer。这4个类是同步进行处理的，
+另外通过ForkingMixIn和ThreadingMixIn类来支持异步
+
+These four classes process requests synchronously; each request must be completed before the next request can be started.
+This isn’t suitable if each request takes a long time to complete, because it requires a lot of computation,
+or because it returns a lot of data which the client is slow to process.
+The solution is to create a separate process or thread to handle each request;
+the ForkingMixIn and ThreadingMixIn mix-in classes can be used to support asynchronous behaviour.
+
+Creating a server requires several steps. First,
+you must create a request handler class by subclassing the BaseRequestHandler class and overriding its handle() method;
+this method will process incoming requests. Second, you must instantiate one of the server classes,
+passing it the server’s address and the request handler class.
+Then call the handle_request() or serve_forever() method of the server object to process one or many requests. Finally,
+call server_close() to close the socket.
+
+When inheriting from ThreadingMixIn for threaded connection behavior,
+you should explicitly declare how you want your threads to behave on an abrupt shutdown.
+The ThreadingMixIn class defines an attribute daemon_threads,
+which indicates whether or not the server should wait for thread termination.
+You should set the flag explicitly if you would like threads to behave autonomously;
+the default is False, meaning that Python will not exit until all threads created by ThreadingMixIn have exited.
+
+Server classes have the same external methods and attributes, no matter what network protocol they use.
+
+
+这四个类同步处理请求；每个请求必须在下一个请求开始之前完成。如果每个请求都需要很长时间才能完成，
+这并不合适，因为它需要大量的计算，或者因为它返回了许多客户机缓慢处理的数据。解决方案是创建一个单独的进程或线程处理每个请求；
+在课堂forkingmixin和threadingmixin混合可以用来支持异步行为。
+创建服务器需要几个步骤。首先，你必须通过子类化的baserequesthandler类和重写其handle()方法创建一个请求处理类；
+这种方法将处理传入的请求。第二，您必须实例化一个服务器类，并将其传递给服务器的地址和请求处理程序类。
+然后调用服务器对象的过程中的一个或多个请求handle_request()或serve_forever()方法。最后，叫server_close()关闭套接字。
+当继承threadingmixin螺纹联接的行为，你应该明确你想让你的线程在一个突然的停车行为。
+的threadingmixin类定义一个属性daemon_threads，指示服务器是否应该等待线程终止。
+你应该设置标志明确如果你想线程自主的行为；默认为false，这意味着Python会直到创建的所有线程都退出退出threadingmixin。
+服务器类具有相同的外部方法和属性，不管它们使用什么网络协议。

@@ -1,4 +1,13 @@
 进程 线程 协程
+http://www.cnblogs.com/alex3714/articles/5230609.html
+进程  空间资源的集合，至少有个线程
+线程  实际的运行单位
+
+主线程
+子线程
+守护线程
+
+
 
 paramiko 模块
 http://www.cnblogs.com/wupeiqi/articles/5095821.html

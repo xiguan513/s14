@@ -5,8 +5,37 @@ http://www.cnblogs.com/alex3714/articles/5230609.html
 
 主线程
 子线程
-守护线程
+    默认情况下，主线程执行完毕后，会等待子线程执行完成以后，在退出程序
 
+守护线程: 配置守护线程后，主线程执行完毕，不管子线程是否执行完，直接退出
+
+python线程直接调用操作系统原生线程
+默认python同一时间只运行一个线程，不管是否是多线程
+
+
+cpython 通过c语言实现的会有这种问题
+全局解释器锁：
+    针对多颗CPU的情况下，python多线程可以调用多颗CPU执行任务，但是实际上同一时间内只有一颗CPU在执行任务，
+    只有等待某一颗CPU线程任务执行结束以后，才会执行其他CPU线程任务，
+
+jpython 通过java语言实现的
+
+pypy
+
+用户级别锁：（互斥锁）
+    lock=threading.Lock()
+    lock.acquire()申请锁
+    lock.release()释放锁
+    注意：python3 中已经优化自动加锁和解锁不需要单独创建用户级别锁
+
+
+递归锁
+    lock=threading.RLock()
+
+信号量（多把锁）
+
+
+进程池
 
 
 paramiko 模块

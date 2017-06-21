@@ -2,6 +2,11 @@
 #-*- coding:utf-8 -*-
 
 
+"""
+队列
+
+"""
+
 import threading
 import time
 import Queue

@@ -1,0 +1,31 @@
+python多线程
+    不适合CPU密集操作型的任务，
+    合适IO密集型的任务
+
+python进程
+    可以根据CPU核数起相对应的进程，每个进程至少有一个线程，所以可以同时执行8个线程任务，但是
+    python中没有单核CPU没有多线程之说，每颗CPU同一时间只能运行一个线程，只是使用快速的上下文切换，实现并行
+
+每个进程默认都会有一个父进程
+
+
+
+
+进程间数据传递
+    Queue 进程队列
+    from multiprocessing import Queue
+
+
+    pipe 管道
+    from multiprocessing import Pipe
+
+进程间数据共享
+    from multiprocessing import Manager
+    可以在多个进程间传递字典，列表，等数据
+    with Manager() as manager:
+        manager.dict()#创建进程间共享字典的方法
+        manager.list(range(5))
+
+
+进程同步（进程锁）针对多进程打印，单屏幕问题
+    from multiprocessing import Lock

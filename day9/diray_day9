@@ -1,38 +1,41 @@
 进程 线程 协程
 http://www.cnblogs.com/alex3714/articles/5230609.html
 进程  空间资源的集合，至少有个线程
-线程  实际的运行单位
+线程  实际的运行单位，内存共享
 
 主线程
 子线程
     默认情况下，主线程执行完毕后，会等待子线程执行完成以后，在退出程序
 
 守护线程: 配置守护线程后，主线程执行完毕，不管子线程是否执行完，直接退出
+         setDaemon(True)设置为守护线程
 
 python线程直接调用操作系统原生线程
-默认python同一时间只运行一个线程，不管是否是多线程
+    默认python同一时间只运行一个线程，不管是否是多核CPU
 
+python 延伸的版本
+    cpython 通过c语言实现的会有这种问题
+    全局解释器锁：
+        针对多颗CPU的情况下，python多线程可以调用多颗CPU执行任务，但是实际上同一时间内只有一颗CPU在执行任务，
+        只有等待某一颗CPU线程任务执行结束以后，才会执行其他CPU线程任务，
 
-cpython 通过c语言实现的会有这种问题
-全局解释器锁：
-    针对多颗CPU的情况下，python多线程可以调用多颗CPU执行任务，但是实际上同一时间内只有一颗CPU在执行任务，
-    只有等待某一颗CPU线程任务执行结束以后，才会执行其他CPU线程任务，
+    jpython 通过java语言实现的
 
-jpython 通过java语言实现的
+    pypy 新python
 
-pypy
-
-用户级别锁：（互斥锁）
+用户级别锁：（互斥锁）修改同一份数据必须加互斥锁
     lock=threading.Lock()
     lock.acquire()申请锁
     lock.release()释放锁
     注意：python3 中已经优化自动加锁和解锁不需要单独创建用户级别锁
 
 
-递归锁
+递归锁，多层锁
     lock=threading.RLock()
 
-信号量（多把锁）
+join 等待前一个线程执行结束，在继续执行其他线程
+
+信号量（同一时间允许多个线程操作数据：多把锁）
 
 
 进程池
@@ -46,7 +49,9 @@ event.wait() 等待
 event.clear() 清空
 
 
-queue队列
+生产者消费者模型
+
+queue队列 作用：解耦是程序松耦合,线程队列
 MQ全称为Message Queue, 消息队列（MQ）是一种应用程序对应用程序的通信方法。应用程序通过读写出入队列的消息（针对应用程序的数据）来通信，而无需专用连接来链接它们。消息传递指的是程序之间通过在消息中发送数据进行通信，而不是通过直接调用彼此来通信，直接调用通常是用于诸如远程过程调用的技术。排队指的是应用程序通过 队列来通信。队列的使用除去了接收和发送应用程序同时执行的要求。
 MQ是消费-生产者模型的一个典型的代表，一端往消息队列中不断写入消息，而另一端则可以读取或者订阅队列中的消息。
 queue.Queue先入先出
@@ -59,8 +64,52 @@ q.put()存入数据
 q.get_nowait()如果没有数据报错
 q.qsize()
 
+创建一个“队列”对象
 
-生产者消费者模型
+import Queue
+myqueue = Queue.Queue(maxsize = 10)
+
+Queue.Queue类即是一个队列的同步实现。队列长度可为无限或者有限。可通过Queue的构造函数的可选参数maxsize来设定队列长度。如果maxsize小于1就表示队列长度无限。
+
+将一个值放入队列中
+
+myqueue.put(10)
+
+调用队列对象的put()方法在队尾插入一个项目。put()有两个参数，第一个item为必需的，为插入项目的值；第二个block为可选参数， 默认为1。如果队列当前为空且block为1，put()方法就使调用线程暂停,直到空出一个数据单元。如果block为0，put方法将引发Full异 常。
+
+将一个值从队列中取出
+
+myqueue.get()
+
+调用队列对象的get()方法从队头删除并返回一个项目。可选参数为block，默认为True。如果队列为空且block为True，get()就使调用线程暂停，直至有项目可用。如果队列为空且block为False，队列将引发Empty异常。
+
+
+python queue模块有三种队列:
+1、python queue模块的FIFO队列先进先出。
+2、LIFO类似于堆。即先进后出。
+3、还有一种是优先级队列级别越低越先出来。
+
+针对这三种队列分别有三个构造函数:
+1、class Queue.Queue(maxsize) FIFO
+2、class Queue.LifoQueue(maxsize) LIFO
+3、class Queue.PriorityQueue(maxsize) 优先级队列
+
+介绍一下此包中的常用方法:
+
+Queue.qsize() 返回队列的大小
+Queue.empty() 如果队列为空，返回True,反之False
+Queue.full() 如果队列满了，返回True,反之False
+Queue.full 与 maxsize 大小对应
+Queue.get([block[, timeout]]) 获取队列，timeout等待时间
+Queue.get_nowait() 相当Queue.get(False)
+非阻塞 Queue.put(item) 写入队列，timeout等待时间
+Queue.put_nowait(item) 相当Queue.put(item, False)
+Queue.task_done() 在完成一项工作之后，Queue.task_done() 函数向任务已经完成的队列发送一个信号
+Queue.join() 实际上意味着等到队列为空，再执行别的操作
+
+
+
+
 
 
 paramiko 模块

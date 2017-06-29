@@ -64,6 +64,12 @@ python进程
     第（3）种方式，在写应用程序代码时，逻辑比前面两种都复杂。
     综合考虑各方面因素，一般普遍认为第（3）种方式是大多数网络服务器采用的方式
 
+IO多路复用
+    select poll eoll异步io
+    http://www.cnblogs.com/alex3714/p/4372426.html
+    同步io,异步io,阻塞io和非阻塞io
+    http://www.cnblogs.com/alex3714/articles/5876749.html
+    内核空间，用户空间
 
 
 

@@ -23,6 +23,9 @@ data3=Session.query(create_table.User).filter(create_table.User.id>2).all()#==se
 data4=Session.query(create_table.User).filter_by(id=2).all()#==select * from user where id = 2
 data5=Session.query(create_table.User).filter(create_table.User.id==2).all()#==select * from user where id = 2
 
+#多条件查询
+data6=Session.query(create_table.User).filter(create_table.User.id>1).filter(create_table.User.id<4).all()#==select * from user where id > 1 and  id < 4
+
 
 
 
@@ -34,3 +37,5 @@ print(data3)
 print("==================")
 print(data4)
 print(data5)
+print("aaaaaaaaaa")
+print(data6)

@@ -2,3 +2,12 @@ orm
     sqlalchemy
 
  隐藏数据访问细节，封闭的通用数据库交互
+
+
+select_data 查询
+update_data 更新
+create_table 创建表
+insert_data 插入
+rollback 回滚
+count_data 统计分组
+join_data链表查询

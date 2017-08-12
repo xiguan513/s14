@@ -56,7 +56,7 @@ WHERE
 
 """
 
-
+#这种方式必须有外键关联才可以使用
 ret2=Session.query(create_table.User).join(create_table.Status).all()
 """
 SELECT

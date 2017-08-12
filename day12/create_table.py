@@ -8,8 +8,8 @@ from sqlalchemy import Column,Integer,String
 from sqlalchemy import ForeignKey #外键关联
 
 
-engine=create_engine("mysql+pymysql://root:123456@localhost/testdb",echo=True) #创建数据库连接
-#engine=create_engine("mysql+pymysql://root:123456@localhost/testdb",echo=True) #创建数据库连接,echo输出打印执行过程
+engine=create_engine("mysql+pymysql://root:123456@localhost/testdb?charset=utf8",echo=True) #创建数据库连接 ?charset=utf8 设置字符集
+#engine=create_engine("mysql+pymysql://root:123456@localhost/testdb?charset=utf8",echo=True) #创建数据库连接,echo输出打印执行过程
 
 
 Base=declarative_base()#生成父类

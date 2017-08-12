@@ -63,8 +63,8 @@ CREATE TABLE address (
 """
 
 
-engine=create_engine("mysql+pymysql://root:123456@localhost/testdb")
-#engine=create_engine("mysql+pymysql://root:123456@localhost/testdb",echo=True)
+engine=create_engine("mysql+pymysql://root:123456@localhost/testdb?charset=utf8")
+#engine=create_engine("mysql+pymysql://root:123456@localhost/testdb?charset=utf8",echo=True)
 
 #Base.metadata.create_all(engine)
 
